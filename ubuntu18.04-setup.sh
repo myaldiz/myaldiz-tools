@@ -34,7 +34,7 @@ cd ~/Downloads && wget https://sourceforge.net/projects/boost/files/boost/1.67.0
   && rm -rf /home/boost_1_67_0
 
 # Cuda installation
-cd ~/Downloads 
+cd ~/Downloads \
     && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin \
     && mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
     && axel -a -n 16 http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb \
@@ -61,7 +61,7 @@ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | tee /etc/apt/sources.list.d/nvidia-docker.list
 curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | tee /etc/apt/sources.list.d/nvidia-container-runtime.list
-apt-get update && apt-get install -y nvidia-container-toolkit
+apt-get update && apt-get install -y nvidia-container-toolkit \
   && apt-get install -y nvidia-container-runtime
 tee /etc/docker/daemon.json <<EOF
 {
